@@ -1,0 +1,207 @@
+
+<div class="text-center">
+
+    <div class="alert alert-info" ng-show="isLoading">
+        Loading data ...
+        <img src="images/loading.gif" >
+    </div>
+
+
+    <div ng-show="!isLoading">
+
+
+        <h3>Node config</h3>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ nodeName.displayName }}</label>
+            <div class="col-xs-3 text-center  small-padding">
+              <input  type="text" ng-model="nodeName.value" class="inp-150px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ nodeName.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form name="form_password" class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">Node password</label>
+            <div class="col-xs-3 text-center  small-padding">
+                <input type="password" name="password" id="password" class="inp-150px" ng-model="nodePassword.value" required />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ nodeName.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label"> Repeat password</label>
+            <div class="col-xs-3 text-center  small-padding">
+                <input type="password" name="password2" id="password2" class="inp-150px" ng-model="password2"  value-match="pwd.password" required />
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-5 col-xs-3">
+                    <span class="msg-error text-center" ng-show="nodePassword.value != password2">Passwords don't match.</span>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ masterGlobalRfidKey.displayName }}</label>
+            <div class="col-xs-3 text-center small-padding">
+              <input  type="text" ng-model="masterGlobalRfidKey.value" class="inp-150px" />
+            </div>
+            <div class="col-xs-1 text-left">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ masterGlobalRfidKey.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ nodeExtensionName.displayName }}</label>
+            <div class="col-xs-3 text-center  small-padding">
+              <input  type="text" ng-model="nodeExtensionName.value" class="inp-150px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ nodeExtensionName.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ nodeExtensionFrontendDisable.displayName }}</label>
+            <div class="col-xs-3 text-center  small-padding">
+              <input  type="checkbox" ng-model="nodeExtensionFrontendDisable.value" class="chk-100px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ nodeExtensionFrontendDisable.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ nodeDebug.displayName }}</label>
+            <div class="col-xs-3 text-center  small-padding">
+              <input  type="checkbox" ng-model="nodeDebug.value" class="chk-100px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ nodeDebug.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ masterCleanupEnable.displayName }}</label>
+            <div class="col-xs-3 text-center small-padding">
+              <input  type="checkbox" ng-model="masterCleanupEnable.value" class="chk-100px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ masterCleanupEnable.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ masterCleanupThreshold.displayName }}</label>
+            <div class="col-xs-3 text-right small-padding">
+              <input  type="text" ng-model="masterCleanupThreshold.value" class="inp-150px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ masterCleanupThreshold.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <br>
+
+        <h3>Interface config</h3>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ interfaceDoor.displayName }}</label>
+            <div class="col-xs-3 text-center small-padding">
+              <input  type="checkbox" ng-model="interfaceDoor.value" class="chk-100px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ interfaceDoor.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ interfaceDoorKeymask.displayName }}</label>
+
+            <div class="col-xs-3 text-center small-padding ">
+                <span class="col-xs-3 text-center">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-red" tooltip="red key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[0]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-green" tooltip="green key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[1]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-black" tooltip="black key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[2]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-pink" tooltip="pink key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[3]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-marine" tooltip="marine key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[4]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-orange" tooltip="orange key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[5]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-olive" tooltip="olive key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[6]">
+                </span>
+                <span class="col-xs-3">
+                    <i class="glyphicon glyphicon-thumbs-up gliphicon-purple" tooltip="purple key"></i>
+                    <input type="checkbox" ng-model="interfaceDoorKeymaskForm[7]" tooltip="purple key">
+                </span>
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ interfaceDoorKeymask.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <form class="form-horizontal row">
+            <label class="col-xs-offset-1 col-xs-4 control-label">{{ interfaceDoorOpeningTime.displayName }}</label>
+            <div class="col-xs-3 text-right small-padding">
+              <input  type="text" ng-model="interfaceDoorOpeningTime.value" class="inp-150px" />
+            </div>
+            <div class="col-xs-1 text-right">
+              <button type="button" class="btn btn-default btn-circle text-left"  popover-placement="top" uib-popover="{{ interfaceDoorOpeningTime.descryption }}">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              </button>
+            </div>
+        </form>
+
+        <br>
+
+        <p>
+            <a href="#!/start" class="btn btn-warning btn-sm" role="button">Go back</a>
+            <a class="btn btn-success btn-lg btn-start text-center" ng-disabled="form_password.password.$dirty != true || nodePassword.value != password2" ng-click="saveConfig()" role="button">Save</a>
+        </p>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "authors": [
+    "Marcus Drobisch <m.drobisch@googlemail.com>"
+  ],
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.X",
+    "angular-bootstrap": "~0.14.2",
+    "bootstrap": "~3.2.0",
+    "restangular": "~1.4.0",
+    "angularjs": "~1.4.0",
+    "angular-local-storage": "~0.2.3",
+    "angular-smart-table": "~2.1.0",
+    "flag-icon-css": "~0.7.1",
+    "angular-base64": "~2.0.5",
+    "angular-number-picker": "~1.2.2",
+    "moment": "~2.10.6",
+    "angular-i18n": "~1.4.7",
+    "angular-chart.js": "~0.8.8",
+    "angular-sanitize": "~1.5.0",
+    "ng-scrollbar" : "~0.0.8"
+  }
+}
